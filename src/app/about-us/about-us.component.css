@@ -1,0 +1,51 @@
+.Header{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: #032B1A;
+    padding: 10px;
+    width: 1440px;
+}
+
+.AboutUs{
+    position: absolute;
+    width: 1442px;
+    height: 560px;
+    left: calc(50% - 1442px/2);
+    top: 175px;
+}
+
+.Slogan{
+    position: absolute;
+    width: 358px;
+    height: 32px;
+    left: 83px;
+    top: 394px;
+}
+
+.Welcome{
+    position: absolute;
+    width: 1280px;
+    height: 32px;
+    left: 83px;
+    top: 818px;
+    background-color: #DDB390;
+}
+
+.About{
+    position: absolute;
+    width: 1245px;
+    height: 320px;
+    left: calc(50% - 1245px/2 + 0.5px);
+    top: 892px;
+    background-color: #DDB390;
+}
+
+.Footer{
+    position: absolute;
+    top: 1700px;
+    left: 0%;
+    background-color: #032B1A;
+    padding: 10px;
+    width: 1440px;
+}
