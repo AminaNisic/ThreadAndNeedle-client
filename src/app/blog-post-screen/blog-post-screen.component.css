@@ -1,0 +1,10 @@
+.bookmark-icon {
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .bookmark-icon.filled {
+    color: darkGreen; /* Change this to your desired fill color */
+  }
+  

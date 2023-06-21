@@ -1,0 +1,23 @@
+<form class="my-4 mx-4" (ngSubmit)="submitForm()">
+  <div class="w-full mb-4 border border-darkGreen rounded-lg bg-white dark:bg-white dark:border-darkGreen">
+    <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-white dark:text-white">
+      <label for="title" class="sr-only">Add post</label>
+      <textarea id="title" rows="1"
+        class="block w-full px-0 text-sm bg-lightGreen border-0 dark:bg-white dark:text-darkGreen focus:ring-lightGreen dark:placeholder-lightGreen"
+        placeholder="Title" name="title" [(ngModel)]="title" [style.color]="titleColor" required></textarea>
+      <hr class="my-4 border-gray-300">
+      <textarea id="blogText" rows="6"
+        class="block w-full px-0 text-sm bg-lightGreen border-0 dark:bg-white dark:text-darkGreen focus:ring-lightGreen dark:placeholder-lightGreen"
+        placeholder="Write a short text..." name="blogText" [(ngModel)]="blogText" [style.color]="blogTextColor"
+        required></textarea>
+      <hr class="my-4 border-gray-300">
+      <textarea id="description" rows="10"
+        class="block w-full px-0 text-sm bg-white border-0 dark:bg-white dark:text-darkGreen focus:ring-lightGreen dark:placeholder-lightGreen"
+        placeholder="Write a post..." name="description" [(ngModel)]="description" [style.color]="descriptionColor" required></textarea>
+    </div>
+  </div>
+  <button type="submit"
+    class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-lightYellow rounded-lg focus:ring-4 focus:ring-lightGreen dark:focus:ring-lightGreen hover:bg-darkGreen">
+    Add post
+  </button>
+</form>

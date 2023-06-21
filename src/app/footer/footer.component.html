@@ -1,0 +1,36 @@
+<footer class="bg-darkGreen text-center dark:bg-darkGreen lg:text-left w-full">
+  <div class="flex justify-center">
+    <div class="p-4 text-neutral-600 dark:text-neutral-300">
+      <div class="flex justify-center items-center">
+        <span class="mr-2">Contact Us:</span>
+        <a class="text-white dark:text-white" href="mailto:thread&needle@gmail.com">ThreadAndNeedle@gmail.com</a>
+      </div>
+      <div class="p-4 text-center text-neutral-700 dark:text-neutral-200">
+        &copy; 2023 Thread&Needle
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+  <script>
+    // Function to check if the page has been scrolled to the bottom
+    function isScrolledToBottom() {
+      return (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight;
+    }
+  
+    // Function to handle scrolling and show/hide the footer
+    function handleScroll() {
+      if (isScrolledToBottom()) {
+        document.getElementById('footer').style.display = 'block';
+      } else {
+        document.getElementById('footer').style.display = 'none';
+      }
+    }
+  
+    // Event listener for scrolling
+    window.addEventListener('scroll', handleScroll);
+  </script>
+  

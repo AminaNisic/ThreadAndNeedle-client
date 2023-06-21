@@ -1,0 +1,24 @@
+<style>
+  .custom-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<a *ngFor="let post of posts" [routerLink]="'/blog-post-screen/' + post.id">
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl lg:max-w-3xl xl:max-w-5xl custom-shadow">
+    <div class="md:flex">
+      <div class="md:shrink-0">
+        <img class="h-48 w-full object-cover md:h-full md:w-48" src="/assets/images/forumPostImg.jpg" alt="Modern building architecture">
+      </div>
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-sm text-darkGreen text-left font-semibold">{{ post.title }}</div>
+        <p class = "text-darkGreen text-left">By: {{ post.username }}</p>
+        <p class="mt-2 text-lightGreen text-left">
+          <br>{{ post.body }}
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+
+  

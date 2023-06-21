@@ -1,44 +1,67 @@
-<div class = "post">
-    <h4 class = "title">How to cinch in a Big Dress<br>By SewErna</h4>
-    <p class = "description">For this tutorial you will need thread, needle, scissors and a measuring tape. 
-        Quick and simple tutorial for beginners. This is a beginner friendly tutorial, 
-        and really easy to follow. Don’t worry, even if you have no experience with sewing, 
-        I guarantee you will be able to follow this tutorial completely!</p>
-    <span class = "blogImage">
-        <img src="assets/images/blogPostImg.jpg" width = "290px" height = "191px">
-    </span>
-</div>
+<div>
+  <a *ngFor="let post of posts" [routerLink]="'/blog-post-screen/' + post.id">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl lg:max-w-3xl xl:max-w-5xl custom-shadow">
+      <div class="md:flex">
+        <div class="md:shrink-0">
+          <img class="h-48 w-full object-cover md:h-full md:w-48" [src]="post.image" alt="Post Image">
+        </div>
+        <div class="p-8">
+          <div class="uppercase tracking-wide text-sm text-darkGreen text-left font-semibold">{{ post.title }}</div>
+          <p class="text-darkGreen text-left">By: {{ post.username }}</p>
+          <p class="mt-2 text-lightGreen text-left">
+            {{ post.description }}
+          </p>
+          <!-- Edit Button -->
+          <button class="btn btn-blue mt-4 custom-shadow" (click)="openEditForm(post)"
+            style="border-radius: 5px; padding: 10px 20px; background-color: darkGreen; color: white; font-size: 16px; border: none;">
+            Edit
+          </button>
+          <!-- Delete Button -->
+          <button class="btn btn-red mt-4 custom-shadow" (click)="deletePost(post.id)"
+            style="border-radius: 5px; padding: 10px 20px; background-color: red; color: white; font-size: 16px; border: none;">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </a>
 
-<div class = "post2">
-    <h4 class = "title">How to cinch in a Big Dress<br>By SewErna</h4>
-    <p class = "description">For this tutorial you will need thread, needle, scissors and a measuring tape. 
-        Quick and simple tutorial for beginners. This is a beginner friendly tutorial, 
-        and really easy to follow. Don’t worry, even if you have no experience with sewing, 
-        I guarantee you will be able to follow this tutorial completely!</p>
-    <span class = "blogImage">
-        <img src="assets/images/blogPostImg.jpg" width = "290px" height = "191px">
-    </span>
+  <!-- Edit Post Form -->
+  <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="editPostData.id">
+    <div class="modal-dialog max-w-xl mx-auto">
+      <div class="modal-content bg-white rounded-lg shadow-lg">
+        <div class="modal-header border-b border-gray-300 bg-gray-100 p-4">
+          <h4 class="modal-title text-lg font-semibold">Edit Post</h4>
+          <button type="button" class="close" aria-label="Close" (click)="editPostData = {}">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-4">
+          <!-- Add form fields to edit the post data -->
+          <form (ngSubmit)="submitEditPostForm()" #editPostForm="ngForm">
+            <div class="form-group">
+              <label for="title" class="block font-semibold">Title</label>
+              <hr />
+              <input type="text" class="form-input mt-1" id="title" name="title" [(ngModel)]="editPostData.title" required>
+            </div>
+            <div class="form-group">
+              <label for="description" class="block font-semibold">Description</label>
+              <hr />
+              <textarea class="form-textarea mt-1" id="description" name="description" [(ngModel)]="editPostData.description" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="blogText" class="block font-semibold">Blog Text</label>
+              <hr />
+              <textarea class="form-textarea mt-1" id="blogText" name="blogText" [(ngModel)]="editPostData.blogText" required></textarea>
+            </div>
+            <div class="flex justify-end">
+              <hr />
+              <button type="submit" class="btn btn-primary custom-shadow"
+                style="border-radius: 5px; padding: 10px 20px; background-color: #4CAF50; color: white; font-size: 16px; border: none;">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class = "post3">
-    <h4 class = "title">How to cinch in a Big Dress<br>By SewErna</h4>
-    <p class = "description">For this tutorial you will need thread, needle, scissors and a measuring tape. 
-        Quick and simple tutorial for beginners. This is a beginner friendly tutorial, 
-        and really easy to follow. Don’t worry, even if you have no experience with sewing, 
-        I guarantee you will be able to follow this tutorial completely!</p>
-    <span class = "blogImage">
-        <img src="assets/images/blogPostImg.jpg" width = "290px" height = "191px">
-    </span>
-</div>
-
-<div class = "post4">
-    <h4 class = "title">How to cinch in a Big Dress<br>By SewErna</h4>
-    <p class = "description">For this tutorial you will need thread, needle, scissors and a measuring tape. 
-        Quick and simple tutorial for beginners. This is a beginner friendly tutorial, 
-        and really easy to follow. Don’t worry, even if you have no experience with sewing, 
-        I guarantee you will be able to follow this tutorial completely!</p>
-    <span class = "blogImage">
-        <img src="assets/images/blogPostImg.jpg" width = "290px" height = "191px">
-    </span>
-</div>
-
