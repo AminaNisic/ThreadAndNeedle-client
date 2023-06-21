@@ -1,9 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-=======
 body{
     background-color: #032B1A;
     color: antiquewhite;
@@ -11,4 +6,4 @@ body{
     font-size: xx-large;
     margin-top: 300px;
 }
->>>>>>> e27a807d6ae5b98446533c25268fc7d3fa55caf6
+
